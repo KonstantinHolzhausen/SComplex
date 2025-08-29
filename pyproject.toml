@@ -1,0 +1,23 @@
+[project]
+name = "scomplex"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dtw-python>=1.5.3",
+    "giotto-tda>=0.6.0",
+    "gudhi>=3.11.0",
+    "hyppo>=0.5.2",
+    "ipykernel>=6.29.5",
+    "libcosimpy>=0.0.3.post1",
+    "nbformat>=5.10.4",
+    "networkx>=3.4.2",
+    "numpy>=2.2.6",
+    "pandas>=2.3.1",
+    "polars>=1.31.0",
+    "pyarrow>=21.0.0",
+    "scikit-learn>=1.7.1",
+    "scipy>=1.15.3",
+    "simplicial>=1.0.1",
+]

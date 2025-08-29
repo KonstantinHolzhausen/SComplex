@@ -1,0 +1,207 @@
+name:         WaypointManager
+uuid:         1cce37fd-4c26-11f0-ad2c-f020ffe634ed
+description:  
+author:       
+version:      
+variables:
+  - name:         x_north
+    reference:    0
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         y_east
+    reference:    1
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         lat_reference
+    reference:    3
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         lon_reference
+    reference:    4
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         r_accept
+    reference:    5
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  100
+  - name:         wp_01_y_east_lon
+    reference:    7
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_01_x_north_lat
+    reference:    8
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_01_sog
+    reference:    9
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_02_y_east_lon
+    reference:    10
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_02_x_north_lat
+    reference:    11
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_02_sog
+    reference:    12
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_03_y_east_lon
+    reference:    13
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_03_x_north_lat
+    reference:    14
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_03_sog
+    reference:    15
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_04_y_east_lon
+    reference:    16
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_04_x_north_lat
+    reference:    17
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_04_sog
+    reference:    18
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_05_y_east_lon
+    reference:    19
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_05_x_north_lat
+    reference:    20
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_05_sog
+    reference:    21
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_06_y_east_lon
+    reference:    22
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_06_x_north_lat
+    reference:    23
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         wp_06_sog
+    reference:    24
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         final_heading_deg
+    reference:    25
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         prev_wp_y_east
+    reference:    26
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         prev_wp_x_north
+    reference:    27
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         prev_wp_sog
+    reference:    28
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         next_wp_y_east
+    reference:    29
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         next_wp_x_north
+    reference:    30
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         next_wp_sog
+    reference:    31
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         final_heading_rad
+    reference:    33
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         nu_of_wps
+    reference:    6
+    type:         integer
+    causality:    parameter
+    variability:  fixed
+    start value:  2
+  - name:         ned_coord
+    reference:    2
+    type:         boolean
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         last_wp_active
+    reference:    32
+    type:         boolean
+    causality:    output
+    variability:  continuous
+  - name:         traj_plan_for_visualization
+    reference:    34
+    type:         string
+    causality:    output
+    variability:  continuous

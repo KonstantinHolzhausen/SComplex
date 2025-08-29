@@ -1,0 +1,1 @@
+<?xml version='1.0' encoding='UTF-8'?><simulators><simulator name="VesselModel3DOFWindCurrent1"/><simulator name="LOSGuidanceProportional1"/><simulator name="WaypointManager1"/><simulator name="OceanCurrent1"/><simulator name="WindModel3DOF1"/></simulators>

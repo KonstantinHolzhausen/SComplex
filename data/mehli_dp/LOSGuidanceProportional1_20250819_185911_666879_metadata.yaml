@@ -1,0 +1,70 @@
+name:         LOSGuidanceProportional
+uuid:         a74679ce-484e-11f0-b6fc-f020ffe634ed
+description:  
+author:       
+version:      
+variables:
+  - name:         look_ahead_distance_meter
+    reference:    0
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  150
+  - name:         prev_wp_x
+    reference:    1
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         prev_wp_y
+    reference:    2
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         next_wp_x
+    reference:    3
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         next_wp_y
+    reference:    4
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         os_x
+    reference:    5
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         os_y
+    reference:    6
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         final_heading_rad
+    reference:    8
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         chi_desired_rad
+    reference:    9
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         chi_desired_deg
+    reference:    10
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         last_wp_active
+    reference:    7
+    type:         boolean
+    causality:    input
+    variability:  continuous
+    start value:  0

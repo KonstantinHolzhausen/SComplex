@@ -1,0 +1,299 @@
+name:         VesselModel3DOFWindCurrent
+uuid:         18b8fdb5-4857-11f0-a336-f020ffe634ed
+description:  
+author:       
+version:      
+variables:
+  - name:         initial_x_north_lat
+    reference:    1
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         initial_y_east_lon
+    reference:    2
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         initial_cog
+    reference:    3
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         initial_sog
+    reference:    4
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         lon_reference
+    reference:    6
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         lat_reference
+    reference:    7
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         step_size
+    reference:    8
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0.01
+  - name:         vessel_length
+    reference:    9
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  116
+  - name:         vessel_width
+    reference:    10
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  20
+  - name:         r_accept
+    reference:    11
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  50
+  - name:         transition_duration
+    reference:    14
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  30
+  - name:         next_wp_x_north
+    reference:    15
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         next_wp_y_east
+    reference:    16
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         chi_desired_rad
+    reference:    17
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         speed_desired
+    reference:    18
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         chi_ca_best
+    reference:    19
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         u_ca_best
+    reference:    20
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  1
+  - name:         u_current
+    reference:    21
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         v_current
+    reference:    22
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         r_current
+    reference:    23
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         tau_wind_surge
+    reference:    24
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         tau_wind_sway
+    reference:    25
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         tau_wind_yaw
+    reference:    26
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         x_north
+    reference:    28
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         y_east
+    reference:    29
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         psi
+    reference:    30
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         u
+    reference:    31
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         v
+    reference:    32
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         r
+    reference:    33
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         tau_surge
+    reference:    34
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         tau_sway
+    reference:    35
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         tau_yaw
+    reference:    36
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         length_ais
+    reference:    39
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         width_ais
+    reference:    40
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         lat_rad
+    reference:    41
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         lon_rad
+    reference:    42
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         lat_deg_ais
+    reference:    43
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         lon_deg_ais
+    reference:    44
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         true_heading_deg_ais
+    reference:    45
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         cog_deg_ais
+    reference:    46
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         sog_kts_ais
+    reference:    47
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         rot_deg_per_min_ais
+    reference:    48
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         cog_error_deg
+    reference:    51
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         sog_error_meter_per_sec
+    reference:    52
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         mmsi
+    reference:    0
+    type:         integer
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         nav_status
+    reference:    12
+    type:         integer
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         stopping_condition
+    reference:    37
+    type:         integer
+    causality:    output
+    variability:  continuous
+  - name:         mmsi_ais
+    reference:    38
+    type:         integer
+    causality:    output
+    variability:  continuous
+  - name:         nav_status_ais
+    reference:    49
+    type:         integer
+    causality:    output
+    variability:  continuous
+  - name:         in_ned_coord
+    reference:    5
+    type:         boolean
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         tau_saturation_enabled
+    reference:    13
+    type:         boolean
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         dp_mode
+    reference:    27
+    type:         boolean
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         transition_in_progress
+    reference:    50
+    type:         boolean
+    causality:    output
+    variability:  continuous

@@ -1,0 +1,63 @@
+name:         WindModel3DOF
+uuid:         93815a77-4ce0-11f0-b810-f020ffe634ed
+description:  
+author:       
+version:      
+variables:
+  - name:         V_wind
+    reference:    0
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         psi_wind_deg
+    reference:    1
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         ramp_duration
+    reference:    3
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  10
+  - name:         psi
+    reference:    4
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         u
+    reference:    5
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         v
+    reference:    6
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         tau_wind_surge
+    reference:    7
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         tau_wind_sway
+    reference:    8
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         tau_wind_yaw
+    reference:    9
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         enable_ramp
+    reference:    2
+    type:         boolean
+    causality:    parameter
+    variability:  fixed
+    start value:  1

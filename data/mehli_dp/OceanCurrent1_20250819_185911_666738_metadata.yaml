@@ -1,0 +1,51 @@
+name:         OceanCurrent
+uuid:         a29bc261-4c43-11f0-89ce-f020ffe634ed
+description:  
+author:       
+version:      
+variables:
+  - name:         V_current
+    reference:    0
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         psi_current_deg
+    reference:    1
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  0
+  - name:         ramp_duration
+    reference:    3
+    type:         real
+    causality:    parameter
+    variability:  fixed
+    start value:  10
+  - name:         psi
+    reference:    4
+    type:         real
+    causality:    input
+    variability:  continuous
+    start value:  0
+  - name:         u_current
+    reference:    5
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         v_current
+    reference:    6
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         r_current
+    reference:    7
+    type:         real
+    causality:    output
+    variability:  continuous
+  - name:         enable_ramp
+    reference:    2
+    type:         boolean
+    causality:    parameter
+    variability:  fixed
+    start value:  1
