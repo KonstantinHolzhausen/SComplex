@@ -64,11 +64,23 @@ def dtw_fix(results_df):
     return results_df
 
 def create_metric_matrix(results_df):
-# Step 1: Get list of unique variables
-    variables = sorted(set(results_df['Var1']).union(set(results_df['Var2'])))
+    variables = []
+    seen = set()
+    
+    # First add variables from Var1 in order of appearance
+    for var in results_df['Var1']:
+        if var not in seen:
+            variables.append(var)
+            seen.add(var)
+    
+    # Then add any variables from Var2 that weren't in Var1
+    for var in results_df['Var2']:
+        if var not in seen:
+            variables.append(var)
+            seen.add(var)
+    
     var_index = {var: i for i, var in enumerate(variables)}
     n = len(variables)
-
     # Step 2: Create distance matrices
     pearson_dist = np.ones((n, n))
     dcor_dist = np.ones((n, n))
@@ -77,10 +89,14 @@ def create_metric_matrix(results_df):
 
     for _, row in results_df.iterrows():
         i, j = var_index[row['Var1']], var_index[row['Var2']]
-        pearson_dist[i, j] = pearson_dist[j, i] = abs(row['Pearson'])
-        dcor_dist[i, j] = dcor_dist[j, i] = row['Distance_Correlation']
-        #dtw_dist[i, j] = dtw_dist[j, i] = 1 - row['DTWDistance']
+        pearson_dist[i, j] = pearson_dist[j, i] =1- abs(row['Pearson'])
+        dcor_dist[i, j] = dcor_dist[j, i] = 1-row['Distance_Correlation']
+        dtw_dist[i, j] = dtw_dist[j, i] = 1 - row['DTWDistance']
         hsic_dist[i, j] = hsic_dist[j, i] = 1 - row['HSIC']
+    np.fill_diagonal(pearson_dist, 0)
+    np.fill_diagonal(dcor_dist, 0)
+    np.fill_diagonal(dtw_dist, 0)
+    np.fill_diagonal(hsic_dist, 0)
     return {"pearson_dist":pearson_dist,"dcor_dist":dcor_dist,"dtw_dist":dtw_dist,"hsic_dist":hsic_dist}
 
 
