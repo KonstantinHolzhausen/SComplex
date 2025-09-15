@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+    "dcor>=0.6",
     "dtw-python>=1.5.3",
     "giotto-tda>=0.6.0",
     "gudhi>=3.11.0",

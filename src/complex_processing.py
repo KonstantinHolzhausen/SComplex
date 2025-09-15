@@ -101,7 +101,7 @@ def create_metric_matrix(results_df):
 
 
 # Step 3: Build Vietoris–Rips complex from distance matrix
-def build_rips_complex(dist_matrix, max_edge_length=1, max_dim=4):
+def build_rips_complex(dist_matrix, max_edge_length=3, max_dim=4):
     rips = gd.RipsComplex(distance_matrix=dist_matrix, max_edge_length=max_edge_length)
     simplex_tree = rips.create_simplex_tree(max_dimension=max_dim)
     print(f"Number of simplices: {simplex_tree.num_simplices()}")

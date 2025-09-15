@@ -201,6 +201,22 @@ wheels = [
 ]
 
 [[package]]
+name = "dcor"
+version = "0.6"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "joblib" },
+    { name = "numba" },
+    { name = "numpy" },
+    { name = "scipy", version = "1.15.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "scipy", version = "1.16.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/00/a7/1d06e98f1b123be60ba5de004edba510025da689c8cfb501299a8f2ba1d1/dcor-0.6.tar.gz", hash = "sha256:f5d39776101db4787348e6be6cd9369341efeb40b070509a30d5c57185558431", size = 45509, upload-time = "2022-12-26T17:44:50.155Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/45/f3/49770c523067d2179a600f236ea6d55f0a02909a424d055dbc50e04c4860/dcor-0.6-py3-none-any.whl", hash = "sha256:de306fc666668188749730fc803fc1d4d804d9886c92b622ba57b434fed395a2", size = 55545, upload-time = "2022-12-26T17:44:48.722Z" },
+]
+
+[[package]]
 name = "debugpy"
 version = "1.8.15"
 source = { registry = "https://pypi.org/simple" }
@@ -1764,6 +1780,7 @@ name = "scomplex"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "dcor" },
     { name = "dtw-python" },
     { name = "giotto-tda" },
     { name = "gudhi" },
@@ -1785,6 +1802,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "dcor", specifier = ">=0.6" },
     { name = "dtw-python", specifier = ">=1.5.3" },
     { name = "giotto-tda", specifier = ">=0.6.0" },
     { name = "gudhi", specifier = ">=3.11.0" },
