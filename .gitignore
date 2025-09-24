@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+
+# animations and plots
+animations
+plots
+*.pdf
+*.eps
+*.mp4
+*.jpeg
+*.png
+*.tif

@@ -1,0 +1,51 @@
+#
+# matplotlib style sheet for presentations
+#
+# Konstantin Holzhausen
+#
+
+figure.figsize:		6.75, 3.375	# figure size in inches
+figure.dpi:		300
+figure.subplot.wspace:	0.3
+figure.subplot.hspace:	0.3
+
+text.usetex:		True
+#text.latex.preamble:   r'\usepackage{amsfonts}'
+
+font.size:  26
+font.family:    serif
+font.weight:    normal
+font.serif: lmodern
+
+legend.fontsize:	18
+legend.handlelength:    1.5
+legend.frameon:		False
+
+axes.grid:  False
+axes.linewidth: 1.0
+axes.labelsize:		18
+axes.labelpad:		5.0
+axes.titlesize:		20
+axes.labelweight:	normal
+axes.spines.top:	False
+axes.spines.right:	False
+axes.prop_cycle:    cycler('color', ['004A89', '00A5E4', 'D99C0E', '84A98C', '680E48'])
+
+lines.linewidth:	2.0
+lines.markersize:	3.5
+lines.markeredgewidth:	0.5
+lines.markeredgecolor:	black
+
+xtick.labelsize:	16
+xtick.major.pad:	1.5
+xtick.color:    000000
+xtick.direction:    out
+xtick.bottom:   True
+ytick.labelsize:	16
+ytick.major.pad:	1.5
+ytick.direction:    out
+ytick.color:    000000
+ytick.left: True
+
+
+savefig.format:		pdf
